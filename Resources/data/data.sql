@@ -1,0 +1,11 @@
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE sample (
+	id			INTEGER PRIMARY KEY, 
+	key  		TEXT    	NOT NULL, 
+	value	INTEGER NOT NULL
+);
+INSERT INTO "sample" VALUES(0,'exp',300);
+INSERT INTO "sample" VALUES(1,'test',100);
+INSERT INTO "sample" VALUES(2,'hoge',200);
+COMMIT;
