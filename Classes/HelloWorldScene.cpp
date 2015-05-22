@@ -21,8 +21,15 @@ bool HelloWorld::init()
     // make encrypt database
     EncryptSQLite::getInstance()->makeEncryptDatabase();
     
-    // select test
-    EncryptSQLite::getInstance()->selectTest();
+    auto label = Label::createWithTTF("SELECT", "fonts/arial.ttf", 30);
+    auto item = MenuItemLabel::create(label, [](Ref* sender){
+        // select test
+        EncryptSQLite::getInstance()->selectTest();
+    });
+    auto menu = Menu::create();
+    menu->addChild(item);
+    this->addChild(menu);
+    
     
     return true;
 }
